@@ -1,0 +1,71 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Slack__slack_search_public",
+      "mcp__claude_ai_Slack__slack_search_public_and_private",
+      "mcp__claude_ai_Slack__slack_read_channel",
+      "mcp__claude_ai_Slack__slack_read_thread",
+      "mcp__claude_ai_Atlassian__getAccessibleAtlassianResources",
+      "mcp__claude_ai_Atlassian__searchJiraIssuesUsingJql",
+      "mcp__claude_ai_Atlassian__getJiraIssue",
+      "mcp__claude_ai_Atlassian__search"
+    ]
+  },
+  "enabledPlugins": {
+    "playwright@claude-plugins-official": true,
+    "trino-mcp@remitly-gen-ai-tools": true
+  },
+  "extraKnownMarketplaces": {
+    "remitly-gen-ai-tools": {
+      "source": {
+        "source": "github",
+        "repo": "Remitly/devlink"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "mcpServers": {
+    "statsig": {
+      "type": "http",
+      "url": "https://api.statsig.com/v1/mcp",
+      "headers": {
+        "statsig-api-key": "console-BsaQV81RZwwItDYFBhYBSZsvy5oq6Kvi8osfWX958Yg"
+      }
+    }
+  },
+  "tui": "fullscreen",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f tsconfig.json ]; then npx tsc --noEmit 2>&1 | head -30; fi"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd=$(python3 -c \"import sys,json; print(json.load(sys.stdin).get('command',''))\" 2>/dev/null); if echo \"$cmd\" | grep -q '^git push'; then if [ -f tsconfig.json ]; then echo 'Pre-push: TypeScript check...' && npx tsc --noEmit 2>&1 | head -20 || exit 2; fi; if ls eslint.config.* .eslintrc.* 2>/dev/null | head -1 | grep -q .; then echo 'Pre-push: ESLint check...' && npx eslint . --max-warnings 0 2>&1 | head -20 || exit 2; fi; fi"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Task complete\" with title \"Claude Code\" sound name \"Glass\"' 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}
