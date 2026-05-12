@@ -14,6 +14,24 @@ claude/
   settings.local.json  # Local overrides (not committed)
 ```
 
+## New machine setup
+
+After cloning, apply the global Claude Code settings to this machine:
+
+```
+Hey Claude — read claude/global-settings.json in this repo and merge its hooks
+into ~/.claude/settings.json, preserving any hooks that already exist there.
+Also copy claude/hooks/stop-notify.py to ~/.claude/hooks/stop-notify.py.
+```
+
+The global settings add:
+- **Auto-format on save** — runs prettier after every file write
+- **Type-check on save** — runs `tsc --noEmit` after every file write (TS projects only)
+- **Lint on save** — runs eslint with `--max-warnings 0` after every file write
+- **Pre-push gate** — blocks `git push` if tsc or eslint fails
+- **Permission notification** — plays a sound and sends a desktop notification when Claude is waiting for approval
+- **Completion notification** — notifies with the last Claude message when a task finishes (requires `terminal-notifier`: `brew install terminal-notifier`)
+
 ## Agents
 
 | Agent | Purpose |

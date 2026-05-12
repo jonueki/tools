@@ -1,15 +1,4 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(git *)",
-      "Bash(find . *)",
-      "Bash(grep *)",
-      "Bash(ls *)",
-      "Bash(wc *)",
-      "Bash(head *)",
-      "Bash(npx *)"
-    ]
-  },
   "hooks": {
     "PostToolUse": [
       {
@@ -37,6 +26,26 @@
           {
             "type": "command",
             "command": "cmd=$(python3 -c \"import sys,json; print(json.load(sys.stdin).get('command',''))\" 2>/dev/null); if echo \"$cmd\" | grep -q '^git push'; then if [ -f tsconfig.json ]; then echo 'Pre-push: TypeScript check...' && npx tsc --noEmit 2>&1 | head -20 || exit 2; fi; if ls eslint.config.* .eslintrc.* 2>/dev/null | head -1 | grep -q .; then echo 'Pre-push: ESLint check...' && npx eslint . --max-warnings 0 2>&1 | head -20 || exit 2; fi; fi"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "tool=$(python3 -c \"import sys,json; d=json.load(sys.stdin); print(d.get('tool_name','unknown'))\" 2>/dev/null); afplay /System/Library/Sounds/Funk.aiff 2>/dev/null & terminal-notifier -title \"Claude Code\" -message \"Waiting for approval\" -subtitle \"$tool needs permission\" -sound \"Basso\" 2>/dev/null || osascript -e \"display notification \\\"$tool needs permission\\\" with title \\\"Claude Code\\\" sound name \\\"Basso\\\"\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/stop-notify.py 2>/dev/null || osascript -e 'display notification \"Task complete\" with title \"Claude Code\" sound name \"Glass\"' 2>/dev/null || true"
           }
         ]
       }
