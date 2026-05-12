@@ -2,8 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(xargs ls -t)",
-      "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Skill(update-config)"
     ]
   }
 }

@@ -1,12 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git -C * status)",
-      "Bash(git -C * diff *)",
-      "Bash(git -C * log *)",
-      "Bash(git -C * show *)",
-      "Bash(git -C * branch *)",
-      "Bash(npx tsc --noEmit)"
+      "Bash(git *)",
+      "Bash(find . *)",
+      "Bash(grep *)",
+      "Bash(ls *)",
+      "Bash(wc *)",
+      "Bash(head *)",
+      "Bash(npx *)"
     ]
   }
 }
