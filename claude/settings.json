@@ -12,27 +12,9 @@
     ]
   },
   "enabledPlugins": {
-    "playwright@claude-plugins-official": true,
-    "trino-mcp@remitly-gen-ai-tools": true
-  },
-  "extraKnownMarketplaces": {
-    "remitly-gen-ai-tools": {
-      "source": {
-        "source": "github",
-        "repo": "Remitly/devlink"
-      }
-    }
+    "playwright@claude-plugins-official": true
   },
   "effortLevel": "high",
-  "mcpServers": {
-    "statsig": {
-      "type": "http",
-      "url": "https://api.statsig.com/v1/mcp",
-      "headers": {
-        "statsig-api-key": "console-BsaQV81RZwwItDYFBhYBSZsvy5oq6Kvi8osfWX958Yg"
-      }
-    }
-  },
   "tui": "fullscreen",
   "hooks": {
     "PostToolUse": [
