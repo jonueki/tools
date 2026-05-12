@@ -1,2 +1,2 @@
-# tools
-some helpful tools 
+# Tools
+Some helpful tools for dev setup
