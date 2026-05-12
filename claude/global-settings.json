@@ -35,7 +35,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "tool=$(python3 -c \"import sys,json; d=json.load(sys.stdin); print(d.get('tool_name','unknown'))\" 2>/dev/null); afplay /System/Library/Sounds/Funk.aiff 2>/dev/null & osascript -e 'tell application \"Terminal\" to activate' 2>/dev/null & terminal-notifier -title \"Claude Code\" -message \"Waiting for approval\" -subtitle \"$tool needs permission\" 2>/dev/null || osascript -e \"display notification \\\"$tool needs permission\\\" with title \\\"Claude Code\\\" sound name \\\"Basso\\\"\" 2>/dev/null || true"
+            "command": "tool=$(python3 -c \"import sys,json; d=json.load(sys.stdin); print(d.get('tool_name','unknown'))\" 2>/dev/null); afplay /System/Library/Sounds/Funk.aiff 2>/dev/null & osascript -e 'tell application \"Terminal\" to activate' 2>/dev/null & /opt/homebrew/bin/terminal-notifier -title \"Claude Code\" -message \"Waiting for approval\" -subtitle \"$tool needs permission\" 2>/dev/null || osascript -e \"display notification \\\"$tool needs permission\\\" with title \\\"Claude Code\\\" sound name \\\"Basso\\\"\" 2>/dev/null || true"
           }
         ]
       }
