@@ -45,6 +45,10 @@
         "hooks": [
           {
             "type": "command",
+            "command": "if [ -f package.json ] && python3 -c \"import json; s=json.load(open('package.json')).get('scripts',{}); exit(0 if 'test' in s else 1)\" 2>/dev/null; then npm test || exit 1; fi; if [ -f package.json ] && python3 -c \"import json; s=json.load(open('package.json')).get('scripts',{}); exit(0 if 'typecheck' in s else 1)\" 2>/dev/null; then npm run typecheck || exit 1; fi"
+          },
+          {
+            "type": "command",
             "command": "python3 ~/.claude/hooks/stop-notify.py 2>/dev/null || osascript -e 'display notification \"Task complete\" with title \"Claude Code\" sound name \"Glass\"' 2>/dev/null || true"
           }
         ]
