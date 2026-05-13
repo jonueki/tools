@@ -26,9 +26,6 @@ if transcript:
         pass
 
 subprocess.run([
-    "/opt/homebrew/bin/terminal-notifier",
-    "-title", project,
-    "-message", "Task complete",
-    "-subtitle", last_msg,
-    "-sound", "Glass"
+    "osascript", "-e",
+    f'display notification "{last_msg}" with title "{project}" subtitle "Task complete" sound name "Glass"'
 ])
