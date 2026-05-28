@@ -1,0 +1,73 @@
+{
+    "kite.showWelcomeNotificationOnStartup": false,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "yaml.schemas": {
+        "file:///Users/jonathanu/.vscode/extensions/atlassian.atlascode-3.0.3/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "redhat.telemetry.enabled": true,
+    "atlascode.jira.jqlList": [
+        {
+            "id": "a25829ee-4e91-4977-a721-fc3408e21ca8",
+            "enabled": true,
+            "name": "My remitly Issues",
+            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+            "siteId": "1b5eab66-8fca-47e0-8b25-6832046be031",
+            "monitor": true
+        }
+    ],
+    "git.autofetch": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "go.toolsManagement.autoUpdate": true,
+    "editor.stickyScroll.enabled": true,
+    "atlascode.bitbucket.enabled": false,
+    "react-native-tools.showUserTips": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.userWords": [
+        "Pressable"
+    ],
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "php.debug.executablePath": "",
+    "openInGithub.maxBuffer": 512000,
+    "ollama-autocoder.model": "qwen2.5-coder:1.5b-base",
+    "go.inferGopath": true,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "github.copilot.enable": {
+        "*": false
+    },
+    "claudeCode.environmentVariables": [
+        {
+            "claudeCode.preferredLocation": "panel",
+            "claudeCode.disableLoginPrompt": true,
+            "claudeCode.environmentVariables": [
+                    {"name": "ANTHROPIC_AUTH_TOKEN", "value": "sk-d8F4OBRQX1LoezcRjKt--Q"},
+                    {"name": "DISABLE_TELEMETRY", "value": "1"},
+                    {"name": "ANTHROPIC_BASE_URL", "value": "https://llm-gateway.dev.remitly.com"}
+            ],
+            "claudeCode.selectedModel": "anthropic.claude-sonnet-4-5-20250929-v1:0"
+        }
+    ],
+    "claudeCode.preferredLocation": "panel",
+    "workbench.colorTheme": "Dark Modern",
+    "chat.disableAIFeatures": true
+}
