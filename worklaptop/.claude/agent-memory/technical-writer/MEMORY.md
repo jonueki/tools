@@ -1,0 +1,1 @@
+- [User Profile](user_profile.md) — senior engineer, sparse docs preferred, comments only for non-obvious WHY, no multi-paragraph docstrings

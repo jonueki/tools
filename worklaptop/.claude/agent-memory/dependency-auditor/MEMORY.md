@@ -1,0 +1,1 @@
+- [personal-finance stack decisions](project_personal-finance-stack.md) — pdf-parse v2.4+ class API, better-sqlite3 serverExternalPackages, .npmrc registry pin, next@15 backport tag

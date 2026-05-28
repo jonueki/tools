@@ -1,0 +1,1 @@
+- [User Profile](user_profile.md) — senior engineer, TypeScript/Next.js/SQLite stack, skip basics, focus on root cause, minimal targeted fixes

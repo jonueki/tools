@@ -1,0 +1,1 @@
+- [User Profile](user_profile.md) — personal finance dashboard; positive=expense sign convention; investment accounts use balance_snapshots not transactions
