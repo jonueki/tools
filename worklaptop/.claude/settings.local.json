@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh pr *)",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); print\\(f'Total PRs: {len\\(data\\)}'\\); print\\(json.dumps\\(data[:3], indent=2\\)\\)\")",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); f=d['fields']; print\\('KEY:', d['key']\\); print\\('SUMMARY:', f['summary']\\); print\\('STATUS:', f['status']['name']\\); print\\('PRIORITY:', f['priority']['name']\\); print\\('CREATED:', f['created']\\); desc=f.get\\('description',''\\); print\\('DESC SNIPPET:', str\\(desc\\)[:1500]\\)\")",
+      "Bash(python3 -c \"import sys,json; d=sys.stdin.read\\(\\); print\\(d[:3000]\\)\")"
+    ]
+  }
+}

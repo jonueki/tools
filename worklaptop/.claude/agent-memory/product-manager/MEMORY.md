@@ -1,0 +1,3 @@
+- [User Role](user_role.md) — full-stack engineer, sole user of their own finance app; wants specific build recommendations not PM platitudes
+- [Personal Finance Project](project_personal_finance.md) — current state, data snapshot, roadmap as of 2026-05-12
+- [Seat Overlay Project](project_seat_overlay.md) — Chrome ext for TM seat selection; hard no-automation constraints; v0 DevTools audit is the unblocking task

@@ -1,0 +1,32 @@
+[user]
+	name = jonueki
+	email = jonathanu@remitly.com
+[pull]
+	ff = only
+[push]
+	default = current
+[url "https://"]
+	insteadOf = git://
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[alias]
+	co = checkout
+	sl = log --graph --oneline
+	st = status
+	cr = switch -c
+	b = branch
+	rb = rebase -i 
+	cm = commit -m
+	move = reset --hard
+	unstage = reset HEAD --
+	del = branch -D
+	undo = reset HEAD~1 --mixed
+	rev = restore
+	discard = restore -s main
+	br = branch
+	acm = !git add . && git commit -m
+	aca = !git add . && git commit --amend --no-edit
+	mm = !git fetch origin && git merge origin/main
+	rbm = !git fetch origin && git rebase origin/main
+[core]
+	excludesFile = /Users/jonathanu/.gitignore
